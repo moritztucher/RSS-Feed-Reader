@@ -6,23 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		908BF3A12CAC01F000AB0F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908BF39D2CAC01F000AB0F75 /* ContentView.swift */; };
+		908BF3A22CAC01F000AB0F75 /* RSS_Feed_ReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908BF39E2CAC01F000AB0F75 /* RSS_Feed_ReaderApp.swift */; };
+		908BF3A32CAC01F000AB0F75 /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908BF39F2CAC01F000AB0F75 /* RSSItem.swift */; };
+		908BF3A42CAC01F000AB0F75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908BF39A2CAC01F000AB0F75 /* Preview Assets.xcassets */; };
+		908BF3A52CAC01F000AB0F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908BF39C2CAC01F000AB0F75 /* Assets.xcassets */; };
+		908BF3A92CAC02D200AB0F75 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 908BF3A82CAC02D200AB0F75 /* Alamofire */; };
+		908BF3AB2CAC02D200AB0F75 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 908BF3AA2CAC02D200AB0F75 /* AlamofireDynamic */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		908BF3822CAC014C00AB0F75 /* RSS Feed Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSS Feed Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		908BF39A2CAC01F000AB0F75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		908BF39C2CAC01F000AB0F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		908BF39D2CAC01F000AB0F75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		908BF39E2CAC01F000AB0F75 /* RSS_Feed_ReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSS_Feed_ReaderApp.swift; sourceTree = "<group>"; };
+		908BF39F2CAC01F000AB0F75 /* RSSItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
+		908BF3A62CAC02BB00AB0F75 /* RSS-Feed-Reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RSS-Feed-Reader-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		908BF3842CAC014C00AB0F75 /* RSS Feed Reader */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "RSS Feed Reader";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		908BF37F2CAC014C00AB0F75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908BF3A92CAC02D200AB0F75 /* Alamofire in Frameworks */,
+				908BF3AB2CAC02D200AB0F75 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +42,7 @@
 		908BF3792CAC014C00AB0F75 = {
 			isa = PBXGroup;
 			children = (
-				908BF3842CAC014C00AB0F75 /* RSS Feed Reader */,
+				908BF3A02CAC01F000AB0F75 /* RSS Feed Reader */,
 				908BF3832CAC014C00AB0F75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +53,27 @@
 				908BF3822CAC014C00AB0F75 /* RSS Feed Reader.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		908BF39B2CAC01F000AB0F75 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				908BF39A2CAC01F000AB0F75 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		908BF3A02CAC01F000AB0F75 /* RSS Feed Reader */ = {
+			isa = PBXGroup;
+			children = (
+				908BF3A62CAC02BB00AB0F75 /* RSS-Feed-Reader-Info.plist */,
+				908BF39F2CAC01F000AB0F75 /* RSSItem.swift */,
+				908BF39D2CAC01F000AB0F75 /* ContentView.swift */,
+				908BF39E2CAC01F000AB0F75 /* RSS_Feed_ReaderApp.swift */,
+				908BF39C2CAC01F000AB0F75 /* Assets.xcassets */,
+				908BF39B2CAC01F000AB0F75 /* Preview Content */,
+			);
+			path = "RSS Feed Reader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,11 +91,10 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				908BF3842CAC014C00AB0F75 /* RSS Feed Reader */,
-			);
 			name = "RSS Feed Reader";
 			packageProductDependencies = (
+				908BF3A82CAC02D200AB0F75 /* Alamofire */,
+				908BF3AA2CAC02D200AB0F75 /* AlamofireDynamic */,
 			);
 			productName = "RSS Feed Reader";
 			productReference = 908BF3822CAC014C00AB0F75 /* RSS Feed Reader.app */;
@@ -94,6 +124,9 @@
 			);
 			mainGroup = 908BF3792CAC014C00AB0F75;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				908BF3A72CAC02D200AB0F75 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 908BF3832CAC014C00AB0F75 /* Products */;
 			projectDirPath = "";
@@ -109,6 +142,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908BF3A42CAC01F000AB0F75 /* Preview Assets.xcassets in Resources */,
+				908BF3A52CAC01F000AB0F75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908BF3A12CAC01F000AB0F75 /* ContentView.swift in Sources */,
+				908BF3A22CAC01F000AB0F75 /* RSS_Feed_ReaderApp.swift in Sources */,
+				908BF3A32CAC01F000AB0F75 /* RSSItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +293,7 @@
 				DEVELOPMENT_TEAM = S84QBGCN9L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RSS-Feed-Reader-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +323,7 @@
 				DEVELOPMENT_TEAM = S84QBGCN9L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RSS-Feed-Reader-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -324,6 +364,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		908BF3A72CAC02D200AB0F75 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		908BF3A82CAC02D200AB0F75 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 908BF3A72CAC02D200AB0F75 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		908BF3AA2CAC02D200AB0F75 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 908BF3A72CAC02D200AB0F75 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 908BF37A2CAC014C00AB0F75 /* Project object */;
 }
