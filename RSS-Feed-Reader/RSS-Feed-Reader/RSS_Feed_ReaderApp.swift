@@ -1,6 +1,6 @@
 //
 //  RSS_Feed_ReaderApp.swift
-//  RSS Feed Reader
+//  RSS-Feed-Reader
 //
 //  Created by Moritz Tucher on 01.10.24.
 //
