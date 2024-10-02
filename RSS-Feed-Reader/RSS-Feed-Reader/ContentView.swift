@@ -8,8 +8,7 @@
 import SwiftUI
 import WebKit
 
-//import Alamofire
-
+/// The main view displaying the list of RSS items.
 struct ContentView: View {
     @State private var rssItems: [RSSItem] = []
     
@@ -43,12 +42,14 @@ struct ContentView: View {
         }
     }
     
+    /// A date formatter for displaying publication dates.
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE, dd MMM yyyy"
         return formatter
     }
     
+    /// Fetches the RSS feed from the specified URL.
     func fetchRSSFeed() {
         guard let url = URL(string: "https://developer.apple.com/news/rss/news.rss") else {
             print("Invalid URL")
@@ -89,36 +90,6 @@ struct ContentView: View {
         }
         
         task.resume()
-    }
-   
-    // Function to read the RSSFeed with Alamofire
-//    func fetchRSSFeed_alamofire() {
-//        let rssURL = "https://developer.apple.com/news/rss/news.rss"
-//        
-//        AF.request(rssURL).responseData { response in
-//            switch response.result {
-//            case .success(let data):
-//                let parser = RSSParser()
-//                if let rssItems = parser.parseRSS(data: data) {
-//                    self.rssItems = rssItems
-//                }
-//            case .failure(let error):
-//                print("Error fetching RSS feed: \(error)")
-//            }
-//        }
-//    }
-    
-}
-
-struct HTMLText: UIViewRepresentable {
-    let html: String
-    
-    func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
-    }
-    
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.loadHTMLString(html, baseURL: nil)
     }
 }
 

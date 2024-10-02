@@ -5,9 +5,9 @@
 //  Created by Moritz Tucher on 02.10.24.
 //
 
-
 import SwiftUI
 
+/// A view that displays the details of a selected RSS item.
 struct DetailView: View {
     let item: RSSItem
     
