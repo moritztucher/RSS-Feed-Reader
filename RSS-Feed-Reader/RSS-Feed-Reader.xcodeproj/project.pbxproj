@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		903406862CAC3781009D0700 /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903406852CAC3781009D0700 /* RSSItem.swift */; };
+		9034068E2CAD2597009D0700 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034068D2CAD2597009D0700 /* DetailView.swift */; };
 		90832F372CAC370D0068E865 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90832F312CAC370D0068E865 /* Preview Assets.xcassets */; };
 		90832F382CAC370D0068E865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90832F332CAC370D0068E865 /* Assets.xcassets */; };
 		90832F392CAC370D0068E865 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90832F342CAC370D0068E865 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		903406852CAC3781009D0700 /* RSSItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
+		9034068D2CAD2597009D0700 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		90832F312CAC370D0068E865 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90832F332CAC370D0068E865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90832F342CAC370D0068E865 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		90832F362CAC370D0068E865 /* RSS-Feed-Reader */ = {
 			isa = PBXGroup;
 			children = (
+				9034068D2CAD2597009D0700 /* DetailView.swift */,
 				903406852CAC3781009D0700 /* RSSItem.swift */,
 				90832F352CAC370D0068E865 /* RSS_Feed_ReaderApp.swift */,
 				90832F342CAC370D0068E865 /* ContentView.swift */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				903406862CAC3781009D0700 /* RSSItem.swift in Sources */,
+				9034068E2CAD2597009D0700 /* DetailView.swift in Sources */,
 				90832F392CAC370D0068E865 /* ContentView.swift in Sources */,
 				90832F3A2CAC370D0068E865 /* RSS_Feed_ReaderApp.swift in Sources */,
 			);

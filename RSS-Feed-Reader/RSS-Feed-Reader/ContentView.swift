@@ -16,12 +16,24 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(rssItems) { item in
-                VStack(alignment: .leading) {
-                    Text(item.title)
-                        .font(.headline)
-                    Text(item.pubDate, formatter: dateFormatter) // Format pubDate
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                NavigationLink(destination: DetailView(item: item)) {
+                    HStack {
+                        if let imageUrl = item.imageUrl, let url = URL(string: imageUrl) {
+                            AsyncImage(url: url) { image in
+                                image.resizable()
+                                     .scaledToFit()
+                                     .frame(width: 50, height: 50)
+                            } placeholder: {
+                                ProgressView()
+                            }
+                        }
+                        VStack(alignment: .leading) {
+                            Text(item.title)
+                            Text(item.pubDate, formatter: dateFormatter) // Format pubDate
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                    }
                 }
             }
             .onAppear {

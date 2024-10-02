@@ -10,6 +10,7 @@ import Foundation
 struct RSSItem: Identifiable {
     let id = UUID()
     let title: String
+    let imageUrl: String? // Added image URL
     let description: String // This will now contain raw HTML
     let link: String
     let pubDate: Date
@@ -22,6 +23,7 @@ class RSSParser: NSObject, XMLParserDelegate {
     private var currentDescription: String?
     private var currentLink: String?
     private var currentPubDate: Date?
+    private var currentImageUrl: String? // New property for image URL
     
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -61,17 +63,17 @@ class RSSParser: NSObject, XMLParserDelegate {
         let data = string.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if !data.isEmpty {
-            print("Found characters for element \(currentElement): \(data)")
             switch currentElement {
             case "title": currentTitle = (currentTitle ?? "") + data
-            case "description": currentDescription = (currentDescription ?? "") + data
+            case "description":
+                if currentElement == "description" {
+                    currentDescription = (currentDescription ?? "") + string
+                    currentImageUrl = extractImageUrl(from: currentDescription ?? "") // Extract image URL here
+                }
             case "link": currentLink = (currentLink ?? "") + data
             case "pubDate":
-                // Directly parse the pubDate string here
                 if let pubDate = dateFormatter.date(from: data) {
                     currentPubDate = pubDate
-                } else {
-                    print("Failed to parse pubDate: \(data)")
                 }
             default: break
             }
@@ -83,8 +85,9 @@ class RSSParser: NSObject, XMLParserDelegate {
             if let title = currentTitle,
                let description = currentDescription,
                let link = currentLink,
-               let pubDate = currentPubDate {
-                let item = RSSItem(title: title, description: description, link: link, pubDate: pubDate)
+               let pubDate = currentPubDate,
+               let imageUrl = currentImageUrl { // Ensure image URL is available
+                let item = RSSItem(title: title, imageUrl: imageUrl, description: description, link: link, pubDate: pubDate)
                 rssItems.append(item)
                 print("Added item: \(title)")
             } else {
@@ -100,6 +103,18 @@ class RSSParser: NSObject, XMLParserDelegate {
                 currentDescription = (currentDescription ?? "") + cdataString
             }
         }
+    }
+    
+    private func extractImageUrl(from description: String) -> String? {
+        let pattern = "<img[^>]+src=\"([^\"]+)\""
+        let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+        let nsString = description as NSString
+        let results = regex?.matches(in: description, options: [], range: NSRange(location: 0, length: nsString.length))
+        
+        if let match = results?.first, let range = Range(match.range(at: 1), in: description) {
+            return String(description[range])
+        }
+        return nil
     }
 }
 
