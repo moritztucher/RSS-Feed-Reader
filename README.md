@@ -15,3 +15,8 @@ A simple RSS feed reader built with **SwiftUI** and **Alamofire** to fetch and d
 This project uses the following third-party libraries:
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) - A Swift-based HTTP networking library used to fetch the RSS feed data.
+
+
+## Note
+
+Alamofire currently not working in this Project
